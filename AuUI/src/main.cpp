@@ -8,6 +8,7 @@
 LPDIRECT3D9 pD3D;
 LPDIRECT3DDEVICE9 pD3Ddevice;
 D3DPRESENT_PARAMETERS d3dpp {};
+
 bool initializeD3D(HWND hWnd);
 void cleanD3D(void);
 
@@ -43,6 +44,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	UpdateWindow(hWnd);
 
 	bool breakLoop = false;
+
 	MSG msg;
 	while (!breakLoop)
 	{

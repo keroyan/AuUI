@@ -1,10 +1,8 @@
 # What's AuUI
 
-**AuUI** which is abbreviation for Actual Understanble User Interface Is a graphical user interface framework to help you build projects faster, easier, cleaner. 
-You might wonder why that name and reasoning behind is because a lot of GUI Frameworks are super difficult to understand and overly complicated to build and use.
+**AuUI**, an abbreviation for "Actual Understandable User Interface" is a graphical user interface framework to help you build your projects quicker and easier. 
 
-In AuUI you will understand how to modify stuff like size, position easily without any extra stuff
-
+You might wonder why I chose that name, and the reasoning behind it is that all other frameworks are complicated and harder to understand; that is not the case with AuUI due to it having understandable code and comments that tell you exactly what a specific file does or a line.
 
 ## Installation
 
@@ -27,8 +25,11 @@ You can also just download the project if you don't want to install "git".
 - Made in?
   - Plain *C++*
 
-# Libraries
+## Libraries
 
 - Logging
   - Spdlog 
  
+## Why?
+
+I created this project because I was tired of searching after an working

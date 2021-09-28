@@ -15,9 +15,9 @@ As this project is primarily about simplicity that means the installation is als
 ```
 
 That's it after that you just include all of the files inside "includes" and you're done.
+You can also just download the project if you don't want to install "git".
 
-## Contributing
+## What does this project use
 
-Contributions are always welcome, if you notice any sort of issue please tell us it will help us a lot of develop the project further and make it better.
-
-  
+This project uses directX to draw all it's elements e.g buttons, checkboxes
+but it uses Windows API to make a window and for events.

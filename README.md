@@ -6,15 +6,15 @@ You might wonder why I chose that name, and the reasoning behind it is that all 
 
 ## Installation
 
-As this project is primarily about simplicity that means the installation is also easy, thus do the following.
+As this project is primarily about simplicity, the installation is also easy; hence do the following.
 
 ```bash
   git clone https://github.com/SorryX/AuUI
 ```
 
-That's it after that you just include all of the files inside "includes" and you are done.
+After that, you include all of the files inside "includes" and you are done.
 <br>
-You can also just download the project if you don't want to install "git".
+You can also download the project if you do not want to install "git".
 
 ## What does this project use
 
@@ -32,4 +32,5 @@ You can also just download the project if you don't want to install "git".
  
 ## Why?
 
-I created this project because I was tired of searching after an working
+I created this project to help people make good designs while not investing time in creating the elements they desire.
+I want to help developers spend more time on the program's quality than the quality of the library. Moreover, with the community's help, we can create a powerful Graphical User Interface Framework that will help developers make powerful programs such as Game Engines and other kinds of programs. Hopefully, you understand that this project is for good intentions only.

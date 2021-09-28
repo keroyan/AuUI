@@ -22,8 +22,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
              TranslateMessage(&msg);
              DispatchMessage(&msg);
 
-	if (msg.message == WM_QUIT)
-            Window.SetBreakLoop(true);
+	     if (msg.message == WM_QUIT)
+                 Window.SetBreakLoop(true);
         }
 
 	if (Window.GetBreakLoop())

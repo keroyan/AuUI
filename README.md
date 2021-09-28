@@ -10,7 +10,7 @@ You might wonder why I chose that name, and the reasoning behind it is that all 
 
 Creating Window's are super easy now and will make your code look cleaner instead of having a 200 lines 
 of code just to make a window (with Directx)
-<br>
+<br><br>
 You can just do the following.
 ```c++
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)

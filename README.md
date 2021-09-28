@@ -15,6 +15,7 @@ As this project is primarily about simplicity that means the installation is als
 ```
 
 That's it after that you just include all of the files inside "includes" and you're done.
+<br>
 You can also just download the project if you don't want to install "git".
 
 ## What does this project use

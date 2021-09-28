@@ -8,9 +8,7 @@ In AuUI you will understand how to modify stuff like size, position easily witho
 
 ## Installation
 
-So you found this project and think it's really good, I agree.
-
-To install this project it's super simple.
+As this project is primarily about simplicity that means the installation is also easy, thus do the following.
 
 ```bash
   git clone https://github.com/SorryX/AuUI

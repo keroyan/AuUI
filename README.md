@@ -14,11 +14,15 @@ As this project is primarily about simplicity that means the installation is als
   git clone https://github.com/SorryX/AuUI
 ```
 
-That's it after that you just include all of the files inside "includes" and you're done.
+That's it after that you just include all of the files inside "includes" and you are done.
 <br>
 You can also just download the project if you don't want to install "git".
 
 ## What does this project use
 
-This project uses directX to draw all it's elements e.g buttons, checkboxes
-but it uses Windows API to make a window and for events.
+- To Draw?
+  - It uses DirectX to draw all it's elements e.g Text, Checkboxes
+- To Create Window?
+  - It uses Windows API to make a basic Window
+- Made in?
+  - Plain C++

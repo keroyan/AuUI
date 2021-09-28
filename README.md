@@ -11,30 +11,30 @@ You might wonder why I chose that name, and the reasoning behind it is that all 
 ```c++
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	AuUI::Window Window;
-	Window.Create(AuUI::WindowData(300, 300, 400, 400, L"Test Window", L"WindowClass1"), WindowProc, hInstance, hPrevInstance, lpCmdLine, nCmdShow);
+    AnUI::Window Window;
+    Window.Create(AuUI::WindowData(300, 300, 400, 400, L"Test Window", L"WindowClass1"), WindowProc, hInstance, hPrevInstance, lpCmdLine, nCmdShow);
 
-	MSG msg;
-	while (!Window.GetBreakLoop())
+    MSG msg;
+    while (!Window.GetBreakLoop())
+    {
+	while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) 
 	{
-		while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) 
-		{
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
+             TranslateMessage(&msg);
+             DispatchMessage(&msg);
 
-			if (msg.message == WM_QUIT)
-				Window.SetBreakLoop(true);
-		}
+	if (msg.message == WM_QUIT)
+            Window.SetBreakLoop(true);
+        }
 
-		if (Window.GetBreakLoop())
-			break;
+	if (Window.GetBreakLoop())
+            break;
       
-    // UI Here!
-	}
+        // UI Here!
+    }
 
-	Window.Destroy();
+    Window.Destroy();
 
-	return 0;
+    return 0;
 }
 ```
 

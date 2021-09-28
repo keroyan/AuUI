@@ -23,11 +23,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
              DispatchMessage(&msg);
 
 	     if (msg.message == WM_QUIT)
-                 Window.SetBreakLoop(true);
+                Window.SetBreakLoop(true);
         }
 
 	if (Window.GetBreakLoop())
-            break;
+           break;
       
         // UI Here!
     }

@@ -21,8 +21,14 @@ You can also just download the project if you don't want to install "git".
 ## What does this project use
 
 - To Draw?
-  - It uses DirectX to draw all it's elements e.g Text, Checkboxes
+  - It uses *DirectX* to draw all it's elements e.g Text, Checkboxes
 - To Create Window?
-  - It uses Windows API to make a basic Window
+  - It uses *Windows API* to make a basic Window
 - Made in?
-  - Plain C++
+  - Plain *C++*
+
+# Libraries
+
+- Logging
+  - Spdlog 
+ 

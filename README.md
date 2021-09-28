@@ -25,11 +25,6 @@ You can also download the project if you do not want to install "git".
 - Made in?
   - Plain *C++*
 
-## Libraries
-
-- Logging
-  - Spdlog 
- 
 ## Why?
 
 I created this project to help people make good designs while not investing time in creating the elements they desire.

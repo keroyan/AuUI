@@ -1,5 +1,6 @@
 #include "AuUI.h"
 
+
 bool AuUI::Window::Create(const WindowData& wData, WNDPROC lpfnWndProc, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	// Clearing WC
@@ -39,16 +40,16 @@ bool AuUI::Window::initializeD3D(HWND hWnd)
 {
 	pD3D = Direct3DCreate9(D3D_SDK_VERSION);
 
-	ZeroMemory(&d3dpp, sizeof(d3dpp));
-	d3dpp.Windowed = TRUE;
-	d3dpp.BackBufferFormat = D3DFMT_UNKNOWN;
-	d3dpp.EnableAutoDepthStencil = TRUE;
-	d3dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
-	d3dpp.AutoDepthStencilFormat = D3DFMT_D16;
-	d3dpp.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
-	d3dpp.hDeviceWindow = hWnd;
+	ZeroMemory(&D3Dpp, sizeof(D3Dpp));
+	D3Dpp.Windowed = TRUE;
+	D3Dpp.BackBufferFormat = D3DFMT_UNKNOWN;
+	D3Dpp.EnableAutoDepthStencil = TRUE;
+	D3Dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
+	D3Dpp.AutoDepthStencilFormat = D3DFMT_D16;
+	D3Dpp.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
+	D3Dpp.hDeviceWindow = hWnd;
 
-	if (pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &d3dpp, &pD3Ddevice) < 0)
+	if (pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &D3Dpp, &pD3Ddevice) < 0)
 		return false;
 
 	return true;
@@ -69,3 +70,4 @@ void AuUI::Window::Destroy()
 	DestroyWindow(hWnd);
 	UnregisterClass(wc.lpszClassName, wc.hInstance);
 }
+

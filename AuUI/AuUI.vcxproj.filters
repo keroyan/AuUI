@@ -27,12 +27,18 @@
     <ClCompile Include="src\Core\AuUI_Elements.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\AuUI_Drawing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\AuUI.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\AuUI_Elements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\AuUI_Drawing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

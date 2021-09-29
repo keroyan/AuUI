@@ -26,20 +26,39 @@ namespace AuUI
 	class Window 
 	{
 	public:
+
+		LPDIRECT3D9 pD3D;
+		LPDIRECT3DDEVICE9 pD3Ddevice;
+		D3DPRESENT_PARAMETERS D3Dpp{};
+		LPDIRECT3DVERTEXBUFFER9 v_buffer;
+
 		bool Create(const WindowData& wData, WNDPROC lpfnWndProc, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow);
 		void Destroy();
+
 		bool GetBreakLoop() { return breakLoop; } const
 		void SetBreakLoop(const bool& v) { breakLoop = v; }
+
 	private:
 		HWND hWnd;
 		WNDCLASSEX wc;
-		LPDIRECT3D9 pD3D;
-		LPDIRECT3DDEVICE9 pD3Ddevice;
-		D3DPRESENT_PARAMETERS d3dpp{};
 
 		bool initializeD3D(HWND hWnd);
 		void cleanD3D(void);
 
 		bool breakLoop = false;
+	};
+
+	class AuVec2 
+	{
+	public:
+		float x, y;
+		AuVec2() { x = y = 0.0f; }
+		AuVec2(float x, float y) :
+			x(x), y(y)
+		{}
+
+		void operator+(const AuVec2& vec) { x += vec.x; y += vec.y; }
+		void operator-(const AuVec2& vec) { x -= vec.x; y -= vec.y; }
+		void operator+=(const AuVec2& vec) { x += vec.x; y += vec.y; }
 	};
 }

@@ -3,6 +3,8 @@
 
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+	
+
 	switch (message)
 	{
 
@@ -19,11 +21,11 @@ LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPara
 }
 
 
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
     AuUI::Window WindowA;
     WindowA.Create(AuUI::WindowData(300, 300, 400, 400, L"test123", L"WindowClassName1"), WindowProc, hInstance, hPrevInstance, lpCmdLine, nCmdShow);
-
 
     MSG msg;
 	while (!WindowA.GetBreakLoop())
@@ -39,8 +41,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
         if (WindowA.GetBreakLoop())
 			break;
-
-
 
 	}
 

@@ -152,12 +152,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\AuUI.cpp" />
+    <ClCompile Include="src\Core\AuUI_Drawing.cpp" />
     <ClCompile Include="src\Core\AuUI_Elements.cpp" />
     <ClCompile Include="src\Core\AuUI_ErrorHandler.h" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\AuUI.h" />
+    <ClInclude Include="src\Core\AuUI_Drawing.h" />
     <ClInclude Include="src\Core\AuUI_Elements.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -14,30 +14,7 @@ You can just do the following.
 ```c++
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-    AnUI::Window Window;
-    Window.Create(AuUI::WindowData(300, 300, 400, 400, L"Test Window", L"WindowClass1"), WindowProc, hInstance, hPrevInstance, lpCmdLine, nCmdShow);
 
-    MSG msg;
-    while (!Window.GetBreakLoop())
-    {
-	while (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE)) 
-	{
-             TranslateMessage(&msg);
-             DispatchMessage(&msg);
-
-	     if (msg.message == WM_QUIT)
-                Window.SetBreakLoop(true);
-        }
-
-	if (Window.GetBreakLoop())
-           break;
-      
-        // UI Here!
-    }
-
-    Window.Destroy();
-
-    return 0;
 }
 ```
 

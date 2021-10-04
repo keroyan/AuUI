@@ -1,9 +1,9 @@
-# What's AuUI
+# What is AuUI
 
 ** Project is not finished **
 
 **AuUI**, an abbreviation for "Actual Understandable User Interface" is a graphical user interface framework to help you build your projects quicker and easier. 
-It's built on top of [ImGui](https://github.com/ocornut/imgui) with additional features to make it easier for a beginner to create softwares using ImGui.
+It's built on top of [ImGui](https://github.com/ocornut/imgui) with additional features to make it easier to create good designs without working hard to get a specific feature added.
 
 ## Usage/Examples
 

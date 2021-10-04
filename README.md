@@ -7,10 +7,7 @@ It's built on top of [ImGui](https://github.com/ocornut/imgui) with additional f
 
 ## Usage/Examples
 
-Creating Window's are super easy now and will make your code look cleaner instead of having a 200 lines 
-of code just to make a window (with Directx)
-<br><br>
-You can just do the following.
+Doing basic Text & Buttons using AuUI
 ```c++
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {

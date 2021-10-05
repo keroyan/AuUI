@@ -44,3 +44,7 @@ You can also download the project if you do not want to install "git".
   - It uses *ImGui* to draw all it's elements e.g Text, Checkboxes
 - Made in?
   - Plain *C++*
+
+## Why creating this?
+I created this because I noticed there weren't any good GUI and the only one was ImGui which was actually understandable and easy to use
+but it still had flaws and my project will hopefully resolve these issues (These issues are stuff that I noticed were hard to understand).

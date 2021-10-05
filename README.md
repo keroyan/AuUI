@@ -3,18 +3,25 @@
 ** Project is not finished **
 
 **AuUI**, an abbreviation for "Actual Understandable User Interface" is a graphical user interface framework to help you build your projects quicker and easier. 
-It's built on top of [ImGui](https://github.com/ocornut/imgui) with additional features to make it easier to create good designs without working hard to get a specific feature added.
+It's built on top of [ImGui](https://github.com/ocornut/imgui) with additional features to make it easier to create good designs without working hard to get a specific feature added. 
 
 ## Usage/Examples
 
-Doing basic Text & Buttons using AuUI
+Getting simple AuUI Window!
 ```c++
-int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+AuUI::BeginWindow();
 {
+    AuUI::Begin(AuUI::WindowData("Simple Window"));
+    {
 
+    }
+    AuUI::End();
 }
+AuUI::EndWindow();
 ```
 
+BeginWindow is just creating a new frame but instead of three lines of code it's just 1 line and EndWindow is the same as ImGui::EndFrame();
+but we don't want to use ImGui namespace as it will look ugly in the code.
   
 
 ## Installation

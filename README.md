@@ -20,11 +20,7 @@ AuUI::BeginWindow();
 AuUI::EndWindow();
 ```
 
-BeginWindow is just creating a new frame but instead of three lines of code it's just 1 line and EndWindow is the same as ImGui::EndFrame();
-but we don't want to use ImGui namespace as it will look ugly in the code. 
-<br></br>
-AuUI::Begin() will create the window and just needs only one argument and it's WindowData which is a class that can be used to add a specific size, flags, 
-and other information about the window 
+
 
 ## Installation
 

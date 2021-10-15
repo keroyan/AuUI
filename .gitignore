@@ -1,0 +1,7 @@
+# Directories
+.vs/
+build/
+build-int/
+
+# Files
+*.user

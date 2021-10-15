@@ -1,73 +1,71 @@
-#include "AuUI.h"
-
-
-bool AuUI::Window::Create(const WindowData& wData, WNDPROC lpfnWndProc, HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
+#include "AuUI.hpp"
+#include <iostream>
+#include <string>
+namespace AuUI 
 {
-	// Clearing WC
-	ZeroMemory(&wc, sizeof(WNDCLASSEX));
+    ImGuiWindowFlags AUUI_DEFAULT_FLAGS = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings;
 
-	// Setting our own settings
-	wc.cbSize = sizeof(WNDCLASSEX);
-	wc.style = CS_HREDRAW | CS_VREDRAW;
-	wc.lpfnWndProc = lpfnWndProc;
-	wc.hInstance = hInstance;
-	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
-	wc.hbrBackground = (HBRUSH)COLOR_WINDOW;
-	wc.lpszClassName = wData.className;
-
-	// Registering wc
-	RegisterClassEx(&wc);
-
-	// Creating the window
-    hWnd = CreateWindowEx(NULL, wData.className, wData.title, WS_OVERLAPPEDWINDOW, wData.posX, wData.posY, wData.width, wData.height, NULL, NULL, hInstance, NULL);
-
-	// Implementing D3D to the window
-	if (!initializeD3D(hWnd))
+    static inline ImVec2 AuLerp(const ImVec2& a, const ImVec2& b, float t) { return ImVec2(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t); }
+    static inline ImVec2 AuLerp(const ImVec2& a, const ImVec2& b, const ImVec2& t) { return ImVec2(a.x + (b.x - a.x) * t.x, a.y + (b.y - a.y) * t.y); }
+    static inline ImVec4 AuLerp(const ImVec4& a, const ImVec4& b, float t) { return ImVec4(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t, a.z + (b.z - a.z) * t, a.w + (b.w - a.w) * t); }
+    
+	void AuUI::InitImGui(HWND hwnd, LPDIRECT3DDEVICE9 device)
 	{
-		cleanD3D();
-		UnregisterClass(wc.lpszClassName, wc.hInstance);
-		return false;
+        // These are ImGui initalize process for specifically DirectX 9 but can easily be modified for other versions e.g DirectX 12 or another graphical api that ImGui Support
+
+        IMGUI_CHECKVERSION();
+        ImGui::CreateContext();
+        ImGuiIO& io = ImGui::GetIO(); (void)io;
+        //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+        //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
+
+        // Loading Style!
+        LoadStyle();
+
+        // Setup Platform/Renderer backends
+        ImGui_ImplWin32_Init(hwnd);
+        ImGui_ImplDX9_Init(device);
 	}
 
-	// Showing the window
-	ShowWindow(hWnd, nCmdShow);
-	UpdateWindow(hWnd);
+    void AuUI::LoadStyle()
+    {
+        ImGuiStyle& style = ImGui::GetStyle();
+        ImGuiIO& io = ImGui::GetIO();
+    }
 
-	return true;
+    void AuUI::BeginFrame() 
+    {
+        ImGui_ImplDX9_NewFrame();
+        ImGui_ImplWin32_NewFrame();
+        ImGui::NewFrame();
+    }
+
+    void AuUI::EndFrame() 
+    {
+        ImGui::EndFrame();
+    }
+
+    void AuUI::Begin(const WindowData& windowData)
+    {
+        if (windowData.GetSize().x != -1 && windowData.GetSize().y != -1)
+            ImGui::SetNextWindowSize(windowData.GetSize(), ImGuiCond_FirstUseEver);
+
+        if (windowData.GetPos().x != -1 && windowData.GetPos().y != -1)
+            ImGui::SetNextWindowPos(windowData.GetSize(), ImGuiCond_FirstUseEver);
+
+        // Creating the window with the data given to us
+        ImGui::Begin(windowData.GetName(), windowData.GetOpen(), windowData.GetFlags());
+    }
+
+    void AuUI::End() 
+    {
+        ImGui::End();
+    }
+
+    ImGuiStyle* AuUI::GetStyle() { return &ImGui::GetStyle(); }
+
+    ImGuiIO* AuUI::GetIO() 
+    {
+        return &ImGui::GetIO();
+    }
 }
-
-bool AuUI::Window::initializeD3D(HWND hWnd)
-{
-	pD3D = Direct3DCreate9(D3D_SDK_VERSION);
-
-	ZeroMemory(&D3Dpp, sizeof(D3Dpp));
-	D3Dpp.Windowed = TRUE;
-	D3Dpp.BackBufferFormat = D3DFMT_UNKNOWN;
-	D3Dpp.EnableAutoDepthStencil = TRUE;
-	D3Dpp.SwapEffect = D3DSWAPEFFECT_DISCARD;
-	D3Dpp.AutoDepthStencilFormat = D3DFMT_D16;
-	D3Dpp.PresentationInterval = D3DPRESENT_INTERVAL_ONE;
-	D3Dpp.hDeviceWindow = hWnd;
-
-	if (pD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd, D3DCREATE_SOFTWARE_VERTEXPROCESSING, &D3Dpp, &pD3Ddevice) < 0)
-		return false;
-
-	return true;
-}
-
-void AuUI::Window::cleanD3D(void)
-{
-	if (pD3Ddevice)
-		pD3Ddevice->Release(), pD3Ddevice = NULL;
-
-	if (pD3D)
-		pD3D->Release(), pD3D = NULL;
-}
-
-void AuUI::Window::Destroy()
-{
-	cleanD3D();
-	DestroyWindow(hWnd);
-	UnregisterClass(wc.lpszClassName, wc.hInstance);
-}
-

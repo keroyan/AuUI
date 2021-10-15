@@ -96,11 +96,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -111,13 +112,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -126,11 +128,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -141,26 +144,41 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\AuUI.cpp" />
-    <ClCompile Include="src\Core\AuUI_Drawing.cpp" />
-    <ClCompile Include="src\Core\AuUI_Elements.cpp" />
-    <ClCompile Include="src\Core\AuUI_ErrorHandler.h" />
+    <ClCompile Include="src\Core\AuUI_Widgets.cpp" />
+    <ClCompile Include="src\Core\ImGui\backend\imgui_impl_dx9.cpp" />
+    <ClCompile Include="src\Core\ImGui\backend\imgui_impl_win32.cpp" />
+    <ClCompile Include="src\Core\ImGui\imgui.cpp" />
+    <ClCompile Include="src\Core\ImGui\imgui_demo.cpp" />
+    <ClCompile Include="src\Core\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="src\Core\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="src\Core\ImGui\imgui_widgets.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Core\AuUI.h" />
-    <ClInclude Include="src\Core\AuUI_Drawing.h" />
-    <ClInclude Include="src\Core\AuUI_Elements.h" />
+    <ClInclude Include="src\Core\AuUI_internal.h" />
+    <ClInclude Include="src\Core\AuUI.hpp" />
+    <ClInclude Include="src\Core\AuUI_Widgets.hpp" />
+    <ClInclude Include="src\Core\ImGui\backend\imgui_impl_dx9.h" />
+    <ClInclude Include="src\Core\ImGui\backend\imgui_impl_win32.h" />
+    <ClInclude Include="src\Core\ImGui\imconfig.h" />
+    <ClInclude Include="src\Core\ImGui\imgui.h" />
+    <ClInclude Include="src\Core\ImGui\imgui_internal.h" />
+    <ClInclude Include="src\Core\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="src\Core\ImGui\imstb_textedit.h" />
+    <ClInclude Include="src\Core\ImGui\imstb_truetype.h" />
+    <ClInclude Include="src\font.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

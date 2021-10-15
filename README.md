@@ -56,16 +56,3 @@ After that, you include all of the files inside "includes" and you are done.
 <br>
 You can also download the project if you do not want to install "git".
 
-## What does this project use
-
-- To Draw?
-  - It uses *DirectX* to draw all it's elements e.g Text, Checkboxes
-- To Create Window?
-  - It uses *Windows API* to make a basic Window
-- Made in?
-  - Plain *C++*
-
-## Why?
-
-I created this project to help people make good designs while not investing time in creating the elements they desire.
-I want to help developers spend more time on the program's quality than the quality of the library. Moreover, with the community's help, we can create a powerful Graphical User Interface Framework that will help developers make powerful programs such as Game Engines and other kinds of programs. Hopefully, you understand that this project is for good intentions only.
